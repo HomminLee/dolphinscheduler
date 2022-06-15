@@ -243,6 +243,7 @@ public class JSONUtilsTest {
         String time = "2022-02-22 13:38:24";
         Date date = DateUtils.stringToDate(time);
         LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+        System.out.println(localDateTime);
         String json = JSONUtils.toJsonString(localDateTime);
         Assert.assertEquals("\"" + time + "\"", json);
     }
