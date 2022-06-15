@@ -177,7 +177,9 @@ public class JSONUtilsTest {
 
     @Test
     public void dateToString() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String time = "2022-02-22 13:38:24";
         Date date = DateUtils.stringToDate(time);
         String json = JSONUtils.toJsonString(date);
@@ -189,7 +191,9 @@ public class JSONUtilsTest {
 
     @Test
     public void stringToDate() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String json = "\"2022-02-22 13:38:24\"";
         Date date = JSONUtils.parseObject(json, Date.class);
         Assert.assertEquals(date, DateUtils.stringToDate("2022-02-22 13:38:24"));
@@ -198,7 +202,9 @@ public class JSONUtilsTest {
 
     @Test
     public void calendarToString() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String time = "2022-02-22 13:38:24";
         Date date = DateUtils.stringToDate(time);
         Calendar instance = Calendar.getInstance();
@@ -210,7 +216,9 @@ public class JSONUtilsTest {
 
     @Test
     public void sqlTimeToString() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         Time time = Time.valueOf("13:38:24");
         String json = JSONUtils.toJsonString(time);
         Assert.assertEquals("\"" + time + "\"", json);
@@ -218,7 +226,9 @@ public class JSONUtilsTest {
 
     @Test
     public void sqlTimestampToString() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String time = "2022-02-22 13:38:24";
         Timestamp timestamp = Timestamp.valueOf(time);
         String json = JSONUtils.toJsonString(timestamp);
@@ -227,7 +237,9 @@ public class JSONUtilsTest {
 
     @Test
     public void localDateTimeToString() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String time = "2022-02-22 13:38:24";
         Date date = DateUtils.stringToDate(time);
         LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
@@ -237,7 +249,9 @@ public class JSONUtilsTest {
 
     @Test
     public void stringToLocalDateTime() {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        TimeZone.setDefault(timeZone);
+        JSONUtils.setTimeZone(timeZone);
         String time = "2022-02-22 13:38:24";
         Date date = DateUtils.stringToDate(time);
         LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());

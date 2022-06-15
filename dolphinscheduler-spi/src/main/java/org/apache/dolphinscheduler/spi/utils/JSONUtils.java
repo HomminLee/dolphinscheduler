@@ -182,6 +182,12 @@ public class JSONUtils {
         return Collections.emptyList();
     }
 
+
+    public static synchronized void setTimeZone(TimeZone timeZone) {
+        objectMapper.setTimeZone(timeZone);
+        logger.info("set timezone: {}", timeZone);
+    }
+
     /**
      * json to map
      * {@link #toMap(String, Class, Class)}
